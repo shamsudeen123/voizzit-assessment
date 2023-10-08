@@ -144,7 +144,7 @@ function AddEmployee() {
           <CustomDropdown
             {...{
               input: "Designation",
-              role: designation,
+              value: designation,
               setCallback: setDesignation,
               menu: [
                 "Software Developer",

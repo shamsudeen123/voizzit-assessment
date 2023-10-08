@@ -6,6 +6,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 function SignIn() {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -84,7 +85,7 @@ function SignIn() {
           <Typography
             variant="span"
             onClick={() => (window.location.href = "/auth/sign-up")}
-            sx={{margin: "10px 0px", cursor: "pointer"}}
+            sx={{ margin: "10px 0px", cursor: "pointer", color: "#1976d2" }}
           >
             Create New User
           </Typography>

@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+// api for sign in
 app.post("/api/signin", async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {

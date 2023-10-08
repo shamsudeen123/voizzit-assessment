@@ -23,15 +23,9 @@ function SignUp() {
       return;
     }
 
-    // Clear form fields after successful signup
-    setUsername("");
-    setPassword("");
-    setRole("");
-    setError("");
-
     if (username && password && role) {
       const requestBody = { username, password, role };
-      // pai call for sign up
+      // api call for sign up
       axios({
         method: "post",
         url: "http://localhost:3000/api/signup",
@@ -42,9 +36,14 @@ function SignUp() {
           setSnackbar(true);
           setMessage("Successfully created!");
           if (response.status === 200)
-            setTimeout(() => {
-              window.location.href = "/auth/sign-in"; // if success reiredct to sign in page
-            }, 2000);
+          // Clear form fields after successful signup
+          setUsername("");
+          setPassword("");
+          setRole("");
+          setError("");
+          setTimeout(() => {
+            window.location.href = "/auth/sign-in"; // if success reiredct to sign in page
+          }, 2000);
         })
         .catch((error) => {
           // popup toast on failure
@@ -96,7 +95,7 @@ function SignUp() {
           <CustomDropdown
             {...{
               input: "Role",
-              role,
+              value: role,
               setCallback: setRole,
               menu: ["admin", "user"],
               error,
