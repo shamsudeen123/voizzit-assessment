@@ -5,10 +5,6 @@ import SignIn from "./auth/sign-in/page";
 import EmployeeListing from "./employee-listing/page";
 
 export default function Home() {
-  // useEffect(() => {
-  //   localStorage.getItem('token') ? window.location.href = "/employee-listing" : window.location.href = "/"
-  // }, [])
-
   return (
     <>
       <Head>
